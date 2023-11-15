@@ -10,9 +10,10 @@ the use of function calls.
 To use this procedural macro, simply apply it to your enum:
 
 ```rust 
+
 use string_enum::StringEnum;
 
-#[derive(StringEnum, Debug)] 
+#[derive(StringEnum)] 
 enum MyEnum { 
     Variant1, 
     Variant2, 
@@ -21,8 +22,10 @@ enum MyEnum {
 
 fn main() { 
     let variant = MyEnum::str_match("Variant2").unwrap();
-    println!("Matched variant: {:?}", variant); 
+    // also adds a to_str method
+    println!("Matched variant: {}", variant.to_str()); 
 } 
+
 
 ```
 

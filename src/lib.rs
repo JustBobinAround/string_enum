@@ -20,10 +20,6 @@ pub fn string_enum(input: TokenStream) -> TokenStream {
 
     //well this was weird
     let expanded = format!(r#"
-        trait StringEnum {{
-            pub fn str_match(s: &str) -> Option<Self>;
-            pub fn to_str(&self) -> String;
-        }}
         impl {} {{
             pub fn str_match(s: &str) -> Option<Self> {{
                 match s {{
@@ -32,10 +28,9 @@ pub fn string_enum(input: TokenStream) -> TokenStream {
                 }}
             }}
 
-            pub fn to_str(&self) -> String {{
+            pub fn to_str(&self) -> &str {{
                 match *self {{
                     {}
-                    _ => None,
                 }}
             }}
         }}
