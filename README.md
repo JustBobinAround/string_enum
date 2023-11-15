@@ -10,9 +10,9 @@ the use of function calls.
 To use this procedural macro, simply apply it to your enum:
 
 ```rust 
-use string_enum_derive::StringEnum;
+use string_enum::StringEnum;
 
-#[derive(StringEnum)] 
+#[derive(StringEnum, Debug)] 
 enum MyEnum { 
     Variant1, 
     Variant2, 
